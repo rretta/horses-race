@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./CarreraDeCaballos.css";
 import Modal from "react-modal";
 import Confetti from "react-confetti";
