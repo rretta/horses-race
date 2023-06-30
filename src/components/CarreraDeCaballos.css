@@ -1,0 +1,84 @@
+.carrera-de-caballos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carta-actual {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.linea-de-partida {
+  width: 100%;
+  height: 10px;
+  background-color: gray;
+  margin-bottom: 20px;
+}
+
+.caballo {
+  position: absolute;
+  top: 0;
+  height: 40px;
+  width: 40px;
+  background-color: brown;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.caballo-todos {
+  background-color: rgb(255, 255, 255);
+  width: 3rem;
+  height: 4rem;
+  color: black;
+  border-radius: 10px;
+
+  border: 2px solid transparent; /* Borde transparente para mantener el espacio */
+  padding: 2px; /* Espacio entre el borde y el contenido */
+
+  /* Borde punteado */
+  border-style: solid;
+  border-width: 2px;
+  border-color: #0000; /* Color transparente */
+
+  /* Borde interior */
+}
+.carta {
+  width: 80px;
+  height: 120px;
+  background-color: white;
+  border: 2px dashed rgb(107, 107, 105);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+
+  color: black;
+  font-size: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.carta .carta-simbolo::before {
+  content: attr(data-emoji);
+  display: block;
+}
+
+.carta .carta-valor {
+  font-size: 1.5rem;
+
+  top: 10px;
+  left: 10px;
+}
+
+.carta .carta-simbolo {
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 8px;
+  margin-top: auto;
+}
