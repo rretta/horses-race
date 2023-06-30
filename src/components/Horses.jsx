@@ -169,65 +169,72 @@ const CarreraDeCaballos = () => {
   };
 
   return (
-    <div className="carrera-de-caballos">
-      <div className="carta-actual">
-        {cartaActual !== null && (
-          <div className={`carta carta-${obtenerPalo(cartaActual)}`}>
-            <div className="carta-valor">{cartaActual.split(" ")[0]}</div>
-            <div className="carta-simbolo">
-              {obtenerPalo(cartaActual) === 0 && "🗡️"}
-              {obtenerPalo(cartaActual) === 1 && "🥦"}
-              {obtenerPalo(cartaActual) === 2 && "⚱️"}
-              {obtenerPalo(cartaActual) === 3 && "🌞"}
+    <>
+      <div className="carrera-de-caballos">
+        <div className="carta-actual">
+          {cartaActual !== null && (
+            <div className={`carta carta-${obtenerPalo(cartaActual)}`}>
+              <div className="carta-valor">{cartaActual.split(" ")[0]}</div>
+              <div className="carta-simbolo">
+                {obtenerPalo(cartaActual) === 0 && "🗡️"}
+                {obtenerPalo(cartaActual) === 1 && "🥦"}
+                {obtenerPalo(cartaActual) === 2 && "⚱️"}
+                {obtenerPalo(cartaActual) === 3 && "🌞"}
+              </div>
             </div>
-          </div>
-        )}
-      </div>
-      <button onClick={darVueltaCarta}>
-        {ganador ? "Reiniciar" : "Dar Vuelta"}
-      </button>
-      <div className="pista"></div>
-      {renderCaballos()}
-      {mostrarModal && (
-        <Modal
-          isOpen={true}
-          onRequestClose={() => setMostrarModal(false)}
-          contentLabel="Ganador"
-          overlayClassName="overlay"
-          style={{
-            content: {
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              maxWidth: "300px",
-              maxHeight: "300px",
-              margin: "auto",
-              backgroundColor: "#fff",
-              borderRadius: "10px",
-              color: "black",
-              padding: "20px",
-              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
-            },
-            overlay: {
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-            },
-          }}
-        >
-          <h3>
-            {ganador === "Espadas" && "GANÓ ESPADA 🗡️"}
-            {ganador === "Bastos" && "GANÓ BASTO 🥦"}
-            {ganador === "Copas" && "GANÓ COPA ⚱️"}
-            {ganador === "Oros" && "GANÓ ORO 🌞"}
-          </h3>
+          )}
+        </div>
+        <button onClick={darVueltaCarta}>
+          {ganador ? "Reiniciar" : "Dar Vuelta"}
+        </button>
+        <div className="pista"></div>
+        {renderCaballos()}
+        {mostrarModal && (
+          <Modal
+            isOpen={true}
+            onRequestClose={() => setMostrarModal(false)}
+            contentLabel="Ganador"
+            overlayClassName="overlay"
+            style={{
+              content: {
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                maxWidth: "300px",
+                maxHeight: "300px",
+                margin: "auto",
+                backgroundColor: "#fff",
+                borderRadius: "10px",
+                color: "black",
+                padding: "20px",
+                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+              },
+              overlay: {
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+              },
+            }}
+          >
+            <h3>
+              {ganador === "Espadas" && "GANÓ ESPADA 🗡️"}
+              {ganador === "Bastos" && "GANÓ BASTO 🥦"}
+              {ganador === "Copas" && "GANÓ COPA ⚱️"}
+              {ganador === "Oros" && "GANÓ ORO 🌞"}
+            </h3>
 
-          <button onClick={darVueltaCarta}>
-            {ganador ? "Reiniciar" : "Dar Vuelta"}
-          </button>
-        </Modal>
-      )}
-      {mostrarConfeti && <Confetti />}
-    </div>
+            <button onClick={darVueltaCarta}>
+              {ganador ? "Reiniciar" : "Dar Vuelta"}
+            </button>
+          </Modal>
+        )}
+        {mostrarConfeti && <Confetti />}
+      </div>
+      <footer className="footer">
+        Creado con{" "}
+        <span style={{ color: "red", fontWeight: "bold" }}>{"🤍"}</span> por{" "}
+        <a href="https://github.com/rretta">rretta</a>
+      </footer>
+    </>
   );
 };
 
